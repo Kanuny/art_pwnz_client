@@ -37,8 +37,8 @@ class Details extends PureComponent {
   render() {
     const { article, loading, locale } = this.props;
     const { image } = this.state;
-    const available = 'Available for order';
-    const unavailable = 'Unavailable';
+
+    const backBtn = '<';
     const images = this.props.images
       .reduce((imgs, image) => ({
         ...imgs,
@@ -55,7 +55,7 @@ class Details extends PureComponent {
       
       <div className={css(styles.container)} >
         <header className={css(styles.header)} >
-          <Link className={css(styles.backLink)} to="/gallery"> / {article.name[locale]} </Link>
+          <Link className={css(styles.backLink)} to="/gallery"> {backBtn} {article.name[locale]} </Link>
         </header>
 
         <section className={css(styles.content)}>
@@ -117,11 +117,11 @@ class Details extends PureComponent {
             <div className={css(styles.info)} >
               <LocalMsg ID={article.forSale ? 'AVAILABLE' : 'UNAVAILABLE'}/>
 
-              <span> {article.description[locale]},&nbsp;{article.year} </span>
+              <span> {article.size},&nbsp;<LocalMsg ID={article.genre || 'TRASH'}/>,&nbsp;<LocalMsg ID="DESC"/>,&nbsp;{article.year} </span>
             </div>
 
             <div className={css(styles.postInfo)} >
-              <span>{article.postDescription ? article.postDescription[locale] : ''}</span>
+              <span>{article.description ? article.description[locale] : ''}</span>
             </div>
 
           </div>

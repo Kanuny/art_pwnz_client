@@ -60,4 +60,16 @@ const localeData = {
     en: 'prev',
     ru: 'пред.',
   },
+  TRASH: {
+    en: 'trash',
+    ru: 'треш'
+  },
+  ARTHOUSE: {
+    en: 'arthouse',
+    ru: 'артхаус',
+  },
+  DESC: {
+    en: 'oil on canvas',
+    ru: 'холст/масло',
+  }
 };
