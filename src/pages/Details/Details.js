@@ -121,7 +121,7 @@ class Details extends PureComponent {
             </div>
 
             <div className={css(styles.postInfo)} >
-              <span>{article.postDescription[locale]}</span>
+              <span>{article.postDescription ? article.postDescription[locale] : ''}</span>
             </div>
 
           </div>
