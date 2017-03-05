@@ -2,9 +2,9 @@
 import type { RequestFunctionType } from '../types';
 
 const load = (r: RequestFunctionType) =>
-  (): Promise<any> => r({
+  (page: number): Promise<any> => r({
     method: 'GET',
-    url: '/articles?page=0',
+    url: `/articles?page=${page}`,
   })
 ;
 
@@ -15,9 +15,16 @@ const getById = (r: RequestFunctionType) =>
   })
 ;
 
+const getImage = (r: RequestFunctionType) =>
+  (id: number): Promise<any> => r({
+    method: 'GET',
+    url: `/images/${id}`,
+  })
 ;
+
 
 export default {
   load,
   getById,
+  getImage,
 };

@@ -2,13 +2,16 @@ import React from 'react';
 import { Link } from 'react-router';
 import cx from 'classnames';
 import { css } from 'aphrodite';
+import { connect } from 'react-redux';
+
+import { changeLocale } from '../../redux/modules/locale';
 
 import styles from './styles';
 
-export default function Layout(props) {
+function Layout(props) {
   return (
     <div className={css(styles.layout)} >
-      <header>
+      <header className={css(styles.head)}>
         <div
           className={cx(
             css(styles.blueLine),
@@ -17,8 +20,18 @@ export default function Layout(props) {
         >
           <div> </div>
           <div className={css(styles.langPicker)} >
-            <button className={css(styles.langBtn)} > RU </button>
-            <button className={css(styles.langBtn)} > EN </button>
+            <button
+              className={
+                cx(css(styles.langBtn), props.locale === 'ru' ? css(styles.active) : '')
+              }
+              onClick={() => props.changeLocale('ru')}
+            > RU </button>
+            <button
+              className={
+                cx(css(styles.langBtn), props.locale === 'en' ? css(styles.active) : '')
+              }
+              onClick={() => props.changeLocale('en')}
+            > EN </button>
           </div>
         </div>
         <div className={css(styles.header)} >
@@ -72,3 +85,8 @@ export default function Layout(props) {
     </div>
   );
 }
+
+export default connect(
+  ({ locale }) => ({ locale: locale.locale }),
+  { changeLocale },
+)(Layout);

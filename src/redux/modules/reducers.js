@@ -4,6 +4,10 @@ import { reducer as reduxAsyncConnect } from 'redux-connect';
 import { reducer as formReducer } from 'redux-form';
 
 import gallery from './gallery';
+import article from './article';
+import videos from './videos';
+import history from './history';
+import locale from './locale';
 
 export default combineReducers({
   routing: routerReducer,
@@ -11,4 +15,8 @@ export default combineReducers({
   form: formReducer,
 
   gallery,
+  article,
+  videos,
+  history,
+  locale,
 });

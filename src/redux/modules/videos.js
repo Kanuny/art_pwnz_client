@@ -1,26 +1,28 @@
 // @flow
-const LOAD = 'art_pwnz/gallery/LOAD';
-const LOAD_SUCCESS = 'art_pwnz/gallery/LOAD_SUCCESS';
-const LOAD_FAILED = 'art_pwnz/gallery/LOAD_FAILED';
+const LOAD = 'art_pwnz/videos/LOAD';
+const LOAD_SUCCESS = 'art_pwnz/videos/LOAD_SUCCESS';
+const LOAD_FAIL = 'art_pwnz/videos/LOAD_FAIL';
 
-type ArticlesType = {
+type VideosType = {
   entities: Array<Object>,
   count: number,
   pageCount: number,
+  page: number,
 };
 
 const initialState = {
   entities: [],
   count: 0,
   pageCount: 0,
+  page: 0
 };
 
-export default function reducer(state: ArticlesType = initialState, action: Object = {}) {
+export default function reducer(state: VideosType = initialState, action: Object = {}) {
   switch (action.type) {
     case LOAD_SUCCESS: {
       return {
         ...state,
-        entities: action.result.articles,
+        entities: action.result.videos,
         count: action.result.count,
         pageCount: action.result.pageCount,
         page: action.result.page,
@@ -32,10 +34,10 @@ export default function reducer(state: ArticlesType = initialState, action: Obje
   }
 }
 
+
 export function load(page: ?number) {
   return {
-    types: [LOAD, LOAD_SUCCESS, LOAD_FAILED],
-    request: (api: Object) => api.articles.load(page || 0),
+    types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
+    request: (api: Object) => api.videos.load(page || 0),
   };
 }
-

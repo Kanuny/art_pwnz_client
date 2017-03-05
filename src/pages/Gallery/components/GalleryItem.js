@@ -1,18 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { css } from 'aphrodite';
+
+import styles from '../styles';
 
 export default function GalleryItem(props) {
-  const { article } = props;
+  const { article, locale } = props;
   return (
     <Link
+      className={css(styles.item)}
       to={`article/${article.id}`}
     >
       <img
+        className={css(styles.img)}
         alt="article preview"
         src={article.images[0].preview}
       />
-      <div>
-        { article.name }
+      <div className={css(styles.itemName)}>
+        { article.name[locale] }
       </div>
     </Link>
   );

@@ -6,13 +6,22 @@ export default StyleSheet.create({
   blueLine: {
     backgroundColor: blue, 
   },
+  active: {
+    color: 'white',
+  },
   topLine: {
     display: 'flex',
+    position: 'absolute',
+    top: 0,
+    width: '100%',
     justifyContent: 'space-between',
     height: '50px',
   },
   bottomLine: {
     display: 'flex',
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
     alignItems: 'center',
     height: '40px',
   },
@@ -23,6 +32,8 @@ export default StyleSheet.create({
   },
   container: {
     flex: 1,
+    width: '1020px',
+    margin: '0 auto 50px auto',
   },
   langPicker: {
     margin: '10px',
@@ -36,8 +47,10 @@ export default StyleSheet.create({
     cursor: 'pointer',
   },
   header: {
-    margin: '80px 133px 34px 133px',
+    margin: '80px auto 34px auto',
     display: 'flex',
+    justifyContent: 'space-between',
+    width: '1020px',
   },
   h1: {
     fontSize: '48px',
@@ -59,5 +72,8 @@ export default StyleSheet.create({
   },
   active: {
     fontWeight: '800',
+  },
+  head: {
+    paddingTop: '50px',
   },
 });
