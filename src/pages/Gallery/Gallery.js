@@ -56,7 +56,7 @@ export default connect(
     galleryList: gallery.entities,
     pageSize: gallery.pageCount,
     page: parseInt(gallery.page, 10) + 1,
-    count: Math.floor((gallery.count / gallery.pageCount) + 1),
+    count: Math.floor(gallery.count / (gallery.pageCount + 1)) + 1,
     locale: locale.locale,
   }),
   { load }, 
