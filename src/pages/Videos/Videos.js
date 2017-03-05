@@ -33,6 +33,7 @@ class Gallery extends PureComponent {
 
     return (
       <div className={css(styles.galleryWrapper)} >
+        <div className={css(styles.videosWrapper)} >
         {
           videos.map((video, index) => 
             <div className={cx(
@@ -54,9 +55,10 @@ class Gallery extends PureComponent {
             </div>
           )
         }
+        </div>
         <Paginator
-          page={page}
-          pageCount={count}
+          page={page || 0}
+          pageCount={count || 0}
           onPageChange={(page) => load(page)}
         />
       </div>

@@ -13,4 +13,13 @@ export default StyleSheet.create({
     fontWeight: '400',
     margin: '5px 0 0 0',
   },
+  galleryWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: 'calc(100vh - 270px)',
+    justifyContent: 'space-between',
+  },
+  videosWrapper: {
+    flex: 1,
+  },
 });

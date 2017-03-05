@@ -25,5 +25,14 @@ export default StyleSheet.create({
   itemName: {
     textAlign: 'center',
     fontSize: '22px',
-  }
+  },
+  galleryWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: 'calc(100vh - 270px)',
+    justifyContent: 'space-between',
+  },
+  itemWrapper: {
+    flex: 1,
+  },
 });

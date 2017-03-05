@@ -30,6 +30,7 @@ class Gallery extends PureComponent {
 
     return (
       <div className={css(styles.galleryWrapper)}>
+        <div className={css(styles.itemWrapper)}>
         {
           galleryList.map((item) => 
             <GalleryItem
@@ -39,9 +40,10 @@ class Gallery extends PureComponent {
             />
           )
         }
+        </div>
         <Paginator
-          page={page}
-          pageCount={count}
+          page={page || 0}
+          pageCount={count || 0}
           onPageChange={(page) => load(page)}
         />
       </div>
