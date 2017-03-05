@@ -18,7 +18,7 @@ const localeData = {
   },
   GALLERY: {
     en: 'Gallery',
-    ru: 'Галлерея',
+    ru: 'Работы',
   },
   VIDEOS: {
     en: 'Videos',
