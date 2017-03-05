@@ -5,6 +5,7 @@ import { css } from 'aphrodite';
 import moment from 'moment';
 
 import { load } from '../../redux/modules/history'
+import LocalMsg from '../../helpers/localization';
 
 import styles from './styles';
 
@@ -29,12 +30,16 @@ function VideoItem(props) {
 function HistoryItem(props) {
   const { locale } = props;
   const { postName, name, postDescription, description, type } = props.item;
-  console.log('!!!', props.item);
+
   return (
     <article className={css(styles.article)} >
       <header className={css(styles.header)} >
         <h1>
-          { postName ? postName[locale] : name[locale]}, added {moment(props.item.createdAt).format(format)}
+          { postName
+            ? postName[locale]
+            : name[locale]
+          }
+          , <LocalMsg ID="ADDED"/> {moment(props.item.createdAt).format(format)}
         </h1>
       </header>
       <section className={css(styles.section)} >
@@ -48,7 +53,7 @@ function HistoryItem(props) {
         </div>
       </section>
       <footer className={css(styles.footer)} >
-        If you like this one, share it with your friends.
+        <LocalMsg ID="SHARE_MSG"/>
       </footer>
     </article>
   );

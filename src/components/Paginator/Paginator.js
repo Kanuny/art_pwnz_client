@@ -2,6 +2,8 @@ import React from 'react';
 import cx from 'classnames';
 import { css } from 'aphrodite';
 
+import LocalMsg from '../../helpers/localization';
+
 import styles from './styles';
 
 function getPaginationState(currentPage, pagesCount) {
@@ -48,7 +50,9 @@ export default function Paginator(props) {
       {
         page === 1
           ? null
-          : <button className={css(styles.pageControl)} onClick={() => onPageChange(prevPage)} > prev </button>
+          : <button className={css(styles.pageControl)} onClick={() => onPageChange(prevPage)} >
+            <LocalMsg ID="PREV"/>
+          </button>
       }
       {
         pages.map((pageIndex, index) =>
@@ -69,7 +73,9 @@ export default function Paginator(props) {
       {
         page === pageCount
           ? null
-          : <button className={css(styles.pageControl)} onClick={() => onPageChange(nextPage)}> next </button>
+          : <button className={css(styles.pageControl)} onClick={() => onPageChange(nextPage)}>
+            <LocalMsg ID="NEXT"/>
+          </button>
       }
     </div>
   );

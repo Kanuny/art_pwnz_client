@@ -55,8 +55,8 @@ export default StyleSheet.create({
   h1: {
     fontSize: '48px',
     fontWeight: '400',
-    width: '300px',
-    margin: '0 180px 0 0',
+    width: '370px',
+    margin: '0 110px 0 0',
   },
   nav: {
     alignSelf: 'center',

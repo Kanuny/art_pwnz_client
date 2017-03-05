@@ -5,6 +5,7 @@ import { css } from 'aphrodite';
 import { connect } from 'react-redux';
 
 import { changeLocale } from '../../redux/modules/locale';
+import LocalMsg from '../../helpers/localization';
 
 import styles from './styles';
 
@@ -36,7 +37,7 @@ function Layout(props) {
         </div>
         <div className={css(styles.header)} >
           <h1 className={css(styles.h1)} >
-            Yury Klapouh
+            <LocalMsg ID="NAME" />
           </h1>
           <nav className={css(styles.nav)} >
             <Link
@@ -44,28 +45,28 @@ function Layout(props) {
               className={css(styles.link)}
               to="/home"
             >
-              Home
+              <LocalMsg ID="HOME" />
             </Link>
             <Link
               activeClassName={css(styles.active)}
               className={css(styles.link)}
               to="/gallery"
             >
-              Gallery
+              <LocalMsg ID="GALLERY" />
             </Link>
             <Link
               activeClassName={css(styles.active)}
               className={css(styles.link)}
               to="/videos"
             >
-              Videos
+              <LocalMsg ID="VIDEOS" />
             </Link>
             <Link
               activeClassName={css(styles.active)}
               className={css(styles.link)}
               to="/about"
             >
-              About
+              <LocalMsg ID="ABOUT" />
             </Link>
           </nav>
         </div>

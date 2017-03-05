@@ -4,6 +4,7 @@ import { css } from 'aphrodite';
 import { Link } from 'react-router';
 
 import { loadArticle, clear } from '../../redux/modules/article';
+import LocalMsg from '../../helpers/localization';
 
 import styles from './styles';
 
@@ -46,7 +47,7 @@ class Details extends PureComponent {
 
     if (loading || ! article.name) {
       return (
-        <div> Loading ... </div>
+        <div> <LocalMsg ID="LOADING" /> ... </div>
       );
     }
 
@@ -101,7 +102,8 @@ class Details extends PureComponent {
           </div>
           <div className={css(styles.description)} >
             <div className={css(styles.info)} >
-              <span> { article.forSale ? available : unavailable } </span>
+              <LocalMsg ID={article.forSale ? 'AVAILABLE' : 'UNAVAILABLE'}/>
+
               <span> {article.description[locale]},&nbsp;{article.year} </span>
             </div>
 
