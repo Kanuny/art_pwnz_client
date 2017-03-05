@@ -74,30 +74,43 @@ class Details extends PureComponent {
                 onClick={() => this.setImage('preview')}
                 src={images.preview ? images.preview.preview : ''}
               />
-              <img
-                className={css(styles.previewImage)}
-                name="main"
-                onClick={() => this.setImage('main')}
-                src={images.main ? images.main.preview : ''}
-              />
-              <img
-                className={css(styles.previewImage)}
-                name="fragment1"
-                onClick={() => this.setImage('fragment1')}
-                src={images.fragment1 ? images.fragment1.preview : ''}
-              />
-              <img
-                className={css(styles.previewImage)}
-                name="fragment2"
-                onClick={() => this.setImage('fragment2')}
-                src={images.fragment2 ? images.fragment2.preview : ''}
-              />
-              <img
-                className={css(styles.previewImage)}
-                name="fragment3"
-                onClick={() => this.setImage('fragment3')}
-                src={images.fragment3 ? images.fragment3.preview : ''}
-              />
+              {
+                images.main
+                  ? <img
+                    className={css(styles.previewImage)}
+                    name="main"
+                    onClick={() => this.setImage('main')}
+                    src={images.main ? images.main.preview : ''}
+                  /> 
+                  : null 
+              }
+              {
+                images.fragment1
+                  ? <img
+                    className={css(styles.previewImage)}
+                    name="fragment1"
+                    onClick={() => this.setImage('fragment1')}
+                    src={images.fragment1 ? images.fragment1.preview : ''}
+                  /> : null 
+              }
+              {
+                images.fragment2
+                  ? <img
+                  className={css(styles.previewImage)}
+                  name="fragment2"
+                  onClick={() => this.setImage('fragment2')}
+                  src={images.fragment2 ? images.fragment2.preview : ''}
+                /> : null
+              }
+              {
+                images.fragment3
+                  ? <img
+                    className={css(styles.previewImage)}
+                    name="fragment3"
+                    onClick={() => this.setImage('fragment3')}
+                    src={images.fragment3 ? images.fragment3.preview : ''}
+                  /> : null
+              }
             </div>
           </div>
           <div className={css(styles.description)} >
