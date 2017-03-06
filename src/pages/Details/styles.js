@@ -49,4 +49,7 @@ export default StyleSheet.create({
     marginTop: '60px',
     fontSize: '24px',
   },
+  description: {
+    width: 'calc(100% - 124px)',
+  },
 });

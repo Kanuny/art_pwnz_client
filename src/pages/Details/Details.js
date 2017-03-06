@@ -107,7 +107,7 @@ class Details extends PureComponent {
             <div className={css(styles.info)} >
               <LocalMsg ID={article.forSale ? 'AVAILABLE' : 'UNAVAILABLE'}/>
 
-              <span> {article.size},&nbsp;<LocalMsg ID={article.genre || 'TRASH'}/>,&nbsp;<LocalMsg ID="DESC"/>,&nbsp;{article.year} </span>
+              <span> { article.size ? `${article.size},` : ''}&nbsp;<LocalMsg ID="DESC"/>,&nbsp;{article.year} </span>
             </div>
 
             <div className={css(styles.postInfo)} >
