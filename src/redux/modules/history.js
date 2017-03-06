@@ -16,7 +16,7 @@ export default function reducer(state: HistoryType = initialState, action: Objec
     case LOAD_SUCCESS: {
       return {
         ...state,
-        entities: action.result,
+        entities: action.result.reverse(),
       };
     }
 

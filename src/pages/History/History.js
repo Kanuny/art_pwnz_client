@@ -35,7 +35,7 @@ function HistoryItem(props) {
     <article className={css(styles.article)} >
       <header className={css(styles.header)} >
         <h1>
-          { postName
+          { postName[locale]
             ? postName[locale]
             : name[locale]
           }
@@ -49,7 +49,7 @@ function HistoryItem(props) {
             : <ArticleItem item={props.item} />
         }
         <div className={css(styles.description)} >
-          { postDescription ? postDescription[locale] : description[locale] }
+          { postDescription[locale] ? postDescription[locale] : description[locale] }
         </div>
       </section>
       <footer className={css(styles.footer)} >
