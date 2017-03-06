@@ -11,7 +11,7 @@ import styles from './styles';
 type PropType = {
   galleryList: Array<Object>,
   locale: string,
-
+  router: Object,
   load: Function,
 }
 
@@ -52,10 +52,14 @@ class Details extends PureComponent {
     }
 
     return (
-      
       <div className={css(styles.container)} >
         <header className={css(styles.header)} >
-          <Link className={css(styles.backLink)} to="/gallery"> {backBtn} {article.name[locale]} </Link>
+          <a
+            className={css(styles.backLink)}
+            onClick={this.props.router.goBack}
+          >
+            {backBtn} <LocalMsg ID="BACK"/>
+          </a>
         </header>
 
         <section className={css(styles.content)}>

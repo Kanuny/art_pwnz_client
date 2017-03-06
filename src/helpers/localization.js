@@ -71,5 +71,9 @@ const localeData = {
   DESC: {
     en: 'oil on canvas',
     ru: 'холст/масло',
-  }
+  },
+  BACK: {
+    en: 'back',
+    ru: 'назад',
+  },
 };

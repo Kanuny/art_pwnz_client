@@ -33,6 +33,7 @@ export default StyleSheet.create({
     marginBottom: '30px',
     fontSize: '32px',
     color: 'black',
+    cursor: 'pointer',
     textDecoration: 'none',
     ':visited': {
       color: 'black',

@@ -18,6 +18,8 @@ type PropType = {
   page: number,
   locale: string,
 
+  router: Object,
+  location: Object,
   load: Function,
 }
 
@@ -25,11 +27,25 @@ class Gallery extends PureComponent {
   props: PropType
 
   componentDidMount() {
-    this.props.load(0);
+    const { page } = this.props.location.query;
+    this.props.load(page || 0);
   }
 
+  componentWillReceiveProps(nextProps) {
+    const query = this.props.location.query;
+    const nextQuery = nextProps.location.query;
+
+    if (query.page !== nextQuery.page || query.filter !== nextQuery.filter) {
+      this.props.load(nextQuery.page || 0);
+    }
+  }
+  getUrl(page = 0, filter) {
+    const filterString = filter ? `&filter=${filter}` : '';
+    return `/videos?page=${page}${filterString}`; 
+  }
   render() {
     const { videos, page, count, load, locale } = this.props;
+    const { filter } = this.props.location.query;
 
     return (
       <div className={css(styles.galleryWrapper)} >
@@ -59,7 +75,7 @@ class Gallery extends PureComponent {
         <Paginator
           page={page || 0}
           pageCount={count || 0}
-          onPageChange={(page) => load(page)}
+          onPageChange={(nextPage) => this.props.router.push(this.getUrl(nextPage, filter))}
         />
       </div>
     );
