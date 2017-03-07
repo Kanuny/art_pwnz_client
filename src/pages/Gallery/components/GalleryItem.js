@@ -17,7 +17,7 @@ export default function GalleryItem(props) {
         src={article.images[0].preview}
       />
       <div className={css(styles.itemName)}>
-        { article.name[locale] }
+        { article.name[locale] || <span> &nbsp; </span> }
       </div>
     </Link>
   );

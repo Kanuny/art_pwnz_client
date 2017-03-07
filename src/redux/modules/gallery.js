@@ -3,16 +3,22 @@ const LOAD = 'art_pwnz/gallery/LOAD';
 const LOAD_SUCCESS = 'art_pwnz/gallery/LOAD_SUCCESS';
 const LOAD_FAILED = 'art_pwnz/gallery/LOAD_FAILED';
 
+const FILTERS = 'art_pwnz/gallery/FILTERS';
+const FILTERS_SUCCESS = 'art_pwnz/gallery/FILTERS_SUCCESS';
+const FILTERS_FAILED = 'art_pwnz/gallery/FILTERS_FAILED';
+
 type ArticlesType = {
   entities: Array<Object>,
   count: number,
   pageCount: number,
+  filters: Array<Object>
 };
 
 const initialState = {
   entities: [],
   count: 0,
   pageCount: 0,
+  filters: [],
 };
 
 export default function reducer(state: ArticlesType = initialState, action: Object = {}) {
@@ -27,15 +33,28 @@ export default function reducer(state: ArticlesType = initialState, action: Obje
       };
     }
 
+    case FILTERS_SUCCESS: {
+      return {
+        ...state,
+        filters: action.result,
+      };
+    }
+
     default:
       return state;
   }
 }
 
-export function load(page: ?number) {
+export function load(page: ?number, filter: ?string) {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAILED],
-    request: (api: Object) => api.articles.load(page || 0),
+    request: (api: Object) => api.articles.load({ page: page || 0, filter }),
   };
 }
 
+export function getFilters() {
+  return {
+    types: [FILTERS, FILTERS_SUCCESS, FILTERS_FAILED],
+    request: (api: Object) => api.articles.getFilters(),
+  }
+}

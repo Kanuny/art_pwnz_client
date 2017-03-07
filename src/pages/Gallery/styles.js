@@ -35,4 +35,20 @@ export default StyleSheet.create({
   itemWrapper: {
     flex: 1,
   },
+  filterWrapper: {
+    margin: 'auto',
+    marginBottom: '10px',
+  },
+  filterLink: {
+    color: 'black',
+    fontSize: '22px',
+    textDecoration: 'none',
+    ':visited': {
+      color: 'black',
+      textDecoration: 'none',
+    },
+  },
+  filterActive: {
+    fontWeight: 'bold',
+  },
 });

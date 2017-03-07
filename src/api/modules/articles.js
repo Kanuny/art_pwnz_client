@@ -2,9 +2,9 @@
 import type { RequestFunctionType } from '../types';
 
 const load = (r: RequestFunctionType) =>
-  (page: number): Promise<any> => r({
+  (cfg: Object): Promise<any> => r({
     method: 'GET',
-    url: `/articles?page=${page}`,
+    url: `/articles?page=${cfg.page}${cfg.filter ? `&filter=${cfg.filter}` : ''}`,
   })
 ;
 
@@ -22,9 +22,16 @@ const getImage = (r: RequestFunctionType) =>
   })
 ;
 
+const getFilters = (r: RequestFunctionType) =>
+  (): Promise<any> => r({
+    method: 'GET',
+    url: '/articles/filters',
+  })
+;
 
 export default {
   load,
   getById,
   getImage,
+  getFilters,
 };
