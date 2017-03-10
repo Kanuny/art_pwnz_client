@@ -4,7 +4,7 @@ const blue = '#6D8BAD';
 
 export default StyleSheet.create({
   blueLine: {
-    backgroundColor: blue, 
+    backgroundColor: blue,
   },
   active: {
     color: 'white',
@@ -24,6 +24,9 @@ export default StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     height: '40px',
+    color: 'white',
+    display: 'flex',
+    alignItems: 'center',
   },
   layout: {
     height: '100%',
@@ -75,5 +78,9 @@ export default StyleSheet.create({
   },
   head: {
     paddingTop: '50px',
+  },
+  copyright: {
+    width: '100%',
+    textAlign: 'center',
   },
 });
