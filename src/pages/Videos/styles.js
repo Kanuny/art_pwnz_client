@@ -21,5 +21,6 @@ export default StyleSheet.create({
   },
   videosWrapper: {
     flex: 1,
+    marginTop: '40px',
   },
 });

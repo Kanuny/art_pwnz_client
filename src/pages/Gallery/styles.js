@@ -37,7 +37,7 @@ export default StyleSheet.create({
   },
   filterWrapper: {
     margin: 'auto',
-    marginBottom: '10px',
+    marginBottom: '30px',
   },
   filterLink: {
     color: 'black',
