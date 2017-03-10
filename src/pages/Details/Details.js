@@ -38,7 +38,7 @@ class Details extends PureComponent {
     const { article, loading, locale } = this.props;
     const { image } = this.state;
 
-    const backBtn = '<';
+    // const backBtn = '<';
     const images = this.props.images
       .reduce((imgs, image) => ({
         ...imgs,
@@ -58,7 +58,8 @@ class Details extends PureComponent {
             className={css(styles.backLink)}
             onClick={this.props.router.goBack}
           >
-            {backBtn} <LocalMsg ID="BACK"/>
+            <i className="fa fa-arrow-left" aria-hidden="true"></i>
+            <LocalMsg ID="BACK"/>
           </a>
         </header>
 
@@ -85,7 +86,7 @@ class Details extends PureComponent {
                     name="fragment1"
                     onClick={() => this.setImage('fragment1')}
                     src={images.fragment1 ? images.fragment1.preview : ''}
-                  /> : null 
+                  /> : null
               }
               {
                 images.fragment2
@@ -132,5 +133,5 @@ export default connect(
     images: article.images,
     locale: locale.locale,
   }),
-  { loadArticle, clear }, 
+  { loadArticle, clear },
 )(Details);

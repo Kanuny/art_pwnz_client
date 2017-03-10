@@ -25,6 +25,9 @@ export default StyleSheet.create({
   itemName: {
     textAlign: 'center',
     fontSize: '22px',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
   },
   galleryWrapper: {
     display: 'flex',

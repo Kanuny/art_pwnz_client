@@ -19,7 +19,17 @@ function Layout(props) {
             css(styles.topLine),
           )}
         >
-          <div> </div>
+          <div className={css(styles.socialWrapper)}>
+            <a className={css(styles.socialLink)}>
+              <i className="fa fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a className={css(styles.socialLink)}>
+              <i className="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a className={css(styles.socialLink)}>
+              <i className="fa fa-envelope-o" aria-hidden="true"></i>
+            </a>
+          </div>
           <div className={css(styles.langPicker)} >
             <button
               className={

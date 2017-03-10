@@ -48,12 +48,30 @@ export default StyleSheet.create({
     border: 'none',
     color: 'black',
     cursor: 'pointer',
+    appearance: 'none',
   },
   header: {
     margin: '80px auto 34px auto',
     display: 'flex',
     justifyContent: 'space-between',
     width: '1020px',
+  },
+  socialWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    marginLeft: '20px',
+  },
+  socialLink: {
+    fontSize: '9pt',
+    width: '20px',
+    textAlign: 'center',
+    height: '20px',
+    border: '2px solid white',
+    borderRadius: '15px',
+    lineHeight: '20px',
+    color: 'white',
+    marginRight: '7px',
+    cursor: 'pointer',
   },
   h1: {
     fontSize: '48px',
@@ -75,6 +93,7 @@ export default StyleSheet.create({
   },
   active: {
     fontWeight: '800',
+    color: 'white',
   },
   head: {
     paddingTop: '50px',
