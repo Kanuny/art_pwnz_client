@@ -17,7 +17,7 @@ function ArticleItem(props) {
     alt="article preview"
     src={props.item.images[0].preview}
   />;
-} 
+}
 
 function VideoItem(props) {
   return <iframe
@@ -25,7 +25,7 @@ function VideoItem(props) {
     height="300"
     src={props.item.url.replace('watch?v=', 'embed/')}
   />;
-} 
+}
 
 function HistoryItem(props) {
   const { locale } = props;
@@ -35,7 +35,7 @@ function HistoryItem(props) {
     <article className={css(styles.article)} >
       <header className={css(styles.header)} >
         <h1>
-          { postName[locale]
+          { postName && postName[locale]
             ? postName[locale]
             : name[locale]
           }
@@ -49,7 +49,7 @@ function HistoryItem(props) {
             : <ArticleItem item={props.item} />
         }
         <div className={css(styles.description)} >
-          { postDescription[locale] ? postDescription[locale] : description[locale] }
+          { postDescription && postDescription[locale] ? postDescription[locale] : description[locale] }
         </div>
       </section>
       <footer className={css(styles.footer)} >
