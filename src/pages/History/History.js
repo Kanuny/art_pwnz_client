@@ -21,6 +21,7 @@ function ArticleItem(props) {
 
 function VideoItem(props) {
   return <iframe
+    allowFullScreen
     width="500"
     height="300"
     src={props.item.url.replace('watch?v=', 'embed/')}

@@ -41,7 +41,7 @@ class Gallery extends PureComponent {
   }
   getUrl(page = 0, filter) {
     const filterString = filter ? `&filter=${filter}` : '';
-    return `/videos?page=${page}${filterString}`; 
+    return `/videos?page=${page}${filterString}`;
   }
   render() {
     const { videos, page, count, load, locale } = this.props;
@@ -51,7 +51,7 @@ class Gallery extends PureComponent {
       <div className={css(styles.galleryWrapper)} >
         <div className={css(styles.videosWrapper)} >
         {
-          videos.map((video, index) => 
+          videos.map((video, index) =>
             <div className={cx(
                 css(styles.videoItem),
                 index % 2 === 0 ? css(styles.left) : '',
@@ -61,6 +61,7 @@ class Gallery extends PureComponent {
               <iframe
                 key={video.id}
                 width="490"
+                allowFullScreen
                 height="340"
                 src={video.url.replace('watch?v=', 'embed/')}
               />
@@ -90,5 +91,5 @@ export default connect(
     count: Math.floor(videos.count / (videos.pageCount + 1)) + 1,
     locale: locale.locale,
   }),
-  { load }, 
+  { load },
 )(Gallery);
