@@ -10,8 +10,44 @@ function LocalMsg(props) {
 export default connect(
   ({ locale }) => ({ locale: locale.locale }),
 )(LocalMsg);
-
+const filters = [
+  { name: 'all', query: {}},
+  { name: 'forSale', query: { forSale: true } },
+  { name: 'landscape', query: { genre: 'landscape' } },
+  { name: 'portrait', query: { genre: 'portrait' } },
+  { name: 'stillLife', query: { genre: 'stillLife' } },
+  { name: 'figurative', query: { genre: 'figurative' } },
+  { name: 'other', query: { genre: false || null } },
+];
 const localeData = {
+  all: {
+    ru: 'Все',
+    en: 'All',
+  },
+  forSale: {
+    en: 'For sale',
+    ru: 'В наличии',
+  },
+  landscape: {
+    en: 'Landscape',
+    ru: 'Пейзаж',
+  },
+  portrait: {
+    en: 'Portrait',
+    ru: 'Портрет',
+  },
+  stillLife: {
+    en: 'Still Life',
+    ru: 'Натюрморт',
+  },
+  figurative: {
+    en: 'Figurative',
+    ru: 'Фигуратив',
+  },
+  other: {
+    en: 'Other',
+    ru: 'Другое',
+  },
   HOME: {
     ru: 'Стена',
     en: 'Home'

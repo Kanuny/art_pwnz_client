@@ -6,6 +6,7 @@ import cx from 'classnames';
 
 import { load, getFilters } from '../../redux/modules/gallery';
 import Paginator from '../../components/Paginator/Paginator';
+import LocalMsg from '../../helpers/localization';
 
 import GalleryItem from './components/GalleryItem';
 import styles from './styles';
@@ -42,12 +43,12 @@ class Gallery extends PureComponent {
   }
   getUrl(page = 0, filter) {
     const filterString = filter ? `&filter=${filter}` : '';
-    return `/gallery?page=${page}${filterString}`; 
+    return `/gallery?page=${page}${filterString}`;
   }
   getFilter(filter) {
     const page = this.props.page
     const filterString = filter ? `&filter=${filter}` : '';
-    return `/gallery?page=${page - 1}${filterString}`; 
+    return `/gallery?page=${page - 1}${filterString}`;
   }
   render() {
     const { galleryList, page, count, locale, filters } = this.props;
@@ -57,7 +58,7 @@ class Gallery extends PureComponent {
       <div className={css(styles.galleryWrapper)}>
         <div className={css(styles.filterWrapper)}>
           {
-            filters.map(f =>
+            filters.map((f, index) =>
               <span key={f.name}>
                 <Link
                   className={cx(
@@ -66,16 +67,16 @@ class Gallery extends PureComponent {
                   )}
                   to={this.getFilter(f.name)}
                 >
-                  {`${f.name} (${f.count})`}
+                  <LocalMsg ID={f.name} />
+                  {` ${ index < filters.length - 1 ? '/' : ''}`}
                 </Link>
-                &nbsp;&nbsp;&nbsp;
               </span>
             )
           }
         </div>
         <div className={css(styles.itemWrapper)}>
         {
-          galleryList.map((item) => 
+          galleryList.map((item) =>
             <GalleryItem
               key={item.id}
               locale={locale}
@@ -103,5 +104,5 @@ export default connect(
     locale: locale.locale,
     filters: gallery.filters,
   }),
-  { load, getFilters }, 
+  { load, getFilters },
 )(Gallery);
