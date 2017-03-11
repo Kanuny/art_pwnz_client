@@ -9,7 +9,7 @@ export default function GalleryItem(props) {
   return (
     <Link
       className={css(styles.item)}
-      to={`article/${article.id}`}
+      to={`gallery/${article.id}`}
     >
       <img
         className={css(styles.img)}
@@ -21,4 +21,4 @@ export default function GalleryItem(props) {
       </div>
     </Link>
   );
-} 
+}

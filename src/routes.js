@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRedirect } from 'react-router';
+import { Router, Route, IndexRedirect, IndexRoute } from 'react-router';
 import { ReduxAsyncConnect } from 'redux-connect';
 
 import Layout from './components/Layout/Layout';
@@ -19,10 +19,14 @@ export default (browserHistory) => (
     <Route path="/" component={Layout}>
       <IndexRedirect to="home" />
       <Route path="home" component={Home} />
+      <Route path="/gallery">
+        <IndexRoute component={Gallery} />
+
+        <Route path=":id" component={Details} />
+      </Route>
       <Route path="gallery" component={Gallery} />
       <Route path="videos" component={Videos} />
       <Route path="about" component={Stub} />
-      <Route path="article/:id" component={Details} />
     </Route>
     <Route path="*" component={() => <div> Not Found </div>} />
   </Router>
