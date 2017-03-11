@@ -40,7 +40,7 @@ export default StyleSheet.create({
   },
   filterWrapper: {
     margin: 'auto',
-    marginBottom: '30px',
+    marginBottom: '45px',
   },
   filterLink: {
     color: 'black',

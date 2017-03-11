@@ -51,7 +51,7 @@ export default StyleSheet.create({
     appearance: 'none',
   },
   header: {
-    margin: '80px auto 34px auto',
+    margin: '80px auto 47px auto',
     display: 'flex',
     justifyContent: 'space-between',
     width: '1020px',
