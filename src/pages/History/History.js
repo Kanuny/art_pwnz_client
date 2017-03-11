@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { css } from 'aphrodite';
 import moment from 'moment';
+import { Link } from 'react-router';
 
 import { load } from '../../redux/modules/history'
 import LocalMsg from '../../helpers/localization';
@@ -13,11 +14,17 @@ import styles from './styles';
 const format = 'll';
 
 function ArticleItem(props) {
-  return <img
-    className={css(styles.img)}
-    alt="article preview"
-    src={props.item.images[0].preview}
-  />;
+  return (
+    <Link
+      to={`gallery/${props.item.id}`}
+    >
+      <img
+        className={css(styles.img)}
+        alt="article preview"
+        src={props.item.images[0].preview}
+      />
+    </Link>
+  );
 }
 
 function VideoItem(props) {
