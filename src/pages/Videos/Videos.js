@@ -46,7 +46,6 @@ class Gallery extends PureComponent {
   render() {
     const { videos, page, count, load, locale } = this.props;
     const { filter } = this.props.location.query;
-
     return (
       <div className={css(styles.galleryWrapper)} >
         <div className={css(styles.videosWrapper)} >
@@ -74,8 +73,8 @@ class Gallery extends PureComponent {
         }
         </div>
         <Paginator
-          page={page || 0}
-          pageCount={count || 0}
+          page={page || 1}
+          pageCount={count || 1}
           onPageChange={(nextPage) => this.props.router.push(this.getUrl(nextPage, filter))}
         />
       </div>

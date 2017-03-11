@@ -86,8 +86,8 @@ class Gallery extends PureComponent {
         }
         </div>
         <Paginator
-          page={page || 0}
-          pageCount={count || 0}
+          page={page || 1}
+          pageCount={count || 1}
           onPageChange={(nextPage) => this.props.router.push(this.getUrl(nextPage, filter))}
         />
       </div>
