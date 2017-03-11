@@ -40,7 +40,13 @@ export default StyleSheet.create({
   },
   previewImage: {
     width: '100px',
+    marginBottom: '24px',
     height: '100px',
+    opacity: '1',
+    cursor: 'pointer',
+  },
+  active: {
+    opacity: '0.4',
   },
   backLink: {
     display: 'inline-block',

@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { css } from 'aphrodite';
 import { Link } from 'react-router';
+import cx from 'classnames';
 
 import { loadArticle, clear } from '../../redux/modules/article';
 import LocalMsg from '../../helpers/localization';
@@ -78,19 +79,24 @@ class Details extends PureComponent {
               />
             </div>
             <div className={css(styles.previewContainer)} >
-              <div className={css(styles.previewWrapper)}>
-                { images.main && !images.main.preview ? <Loader /> : null }
-                <img
-                  className={css(styles.previewImage)}
-                  name="main"
-                  onClick={() => this.setImage('main')}
-                  src={images.main ? images.main.preview : ''}
-                />
-              </div>
+
+              <img
+                className={cx(
+                  css(styles.previewImage),
+                  image !== 'main' ? css(styles.active) : ''
+                )}
+                name="main"
+                onClick={() => this.setImage('main')}
+                src={images.main ? images.main.preview : ''}
+              />
+
               {
                 images.fragment1
                   ? <img
-                    className={css(styles.previewImage)}
+                    className={cx(
+                      css(styles.previewImage),
+                      image !== 'fragment1' ? css(styles.active) : ''
+                    )}
                     name="fragment1"
                     onClick={() => this.setImage('fragment1')}
                     src={images.fragment1 ? images.fragment1.preview : ''}
@@ -99,16 +105,22 @@ class Details extends PureComponent {
               {
                 images.fragment2
                   ? <img
-                  className={css(styles.previewImage)}
-                  name="fragment2"
-                  onClick={() => this.setImage('fragment2')}
-                  src={images.fragment2 ? images.fragment2.preview : ''}
-                /> : null
+                    className={cx(
+                      css(styles.previewImage),
+                      image !== 'fragment2' ? css(styles.active) : ''
+                    )}
+                    name="fragment2"
+                    onClick={() => this.setImage('fragment2')}
+                    src={images.fragment2 ? images.fragment2.preview : ''}
+                  /> : null
               }
               {
                 images.fragment3
                   ? <img
-                    className={css(styles.previewImage)}
+                    className={cx(
+                      css(styles.previewImage),
+                      image !== 'fragment3' ? css(styles.active) : ''
+                    )}
                     name="fragment3"
                     onClick={() => this.setImage('fragment3')}
                     src={images.fragment3 ? images.fragment3.preview : ''}
@@ -128,7 +140,7 @@ class Details extends PureComponent {
                   </span>
                   : <span />
               }
-              <span> { article.size ? `${article.size},` : ''}&nbsp;<LocalMsg ID="DESC"/>,&nbsp;{article.year} </span>
+              <span> { article.size ? `${article.size},` : ''}&nbsp;<LocalMsg ID="DESC"/>&nbsp;{article.year} </span>
             </div>
 
             <div className={css(styles.postInfo)} >

@@ -121,8 +121,8 @@ const localeData = {
     ru: 'артхаус',
   },
   DESC: {
-    en: 'oil on canvas',
-    ru: 'холст/масло',
+    en: 'oil on canvas,',
+    ru: 'холст/масло,',
   },
   BACK: {
     en: 'back',

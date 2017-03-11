@@ -94,7 +94,7 @@ function Layout(props) {
           css(styles.bottomLine),
         )}
       >
-        <span className={css(styles.copyright)}> © 2016 Yury Klapouh </span>
+        <span className={css(styles.copyright)}> © 2017 Yury Klapouh </span>
       </footer>
       <Modal />
     </div>

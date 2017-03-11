@@ -68,7 +68,6 @@ class Gallery extends PureComponent {
               />
               <div>
                 <h1 className={css(styles.name)} > {video.name[locale]} </h1>
-                <span> added {moment(video.createdAt).format(format)} </span>
               </div>
             </div>
           )

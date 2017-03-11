@@ -10,7 +10,7 @@ export default StyleSheet.create({
     marginRight: '20px',
   },
   name: {
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: '22px',
     textOverflow: 'ellipsis',
     overflow: 'hidden',

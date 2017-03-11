@@ -39,7 +39,7 @@ export default StyleSheet.create({
     margin: '0 auto 50px auto',
   },
   langPicker: {
-    margin: '10px',
+    margin: '10px 30px 10px 10px',
     alignSelf: 'center',
   },
   langBtn: {

@@ -58,7 +58,11 @@ function HistoryItem(props) {
             : <ArticleItem item={props.item} />
         }
         <div className={css(styles.description)} >
-          { postDescription && postDescription[locale] ? postDescription[locale] : description[locale] }
+          {
+            postDescription && postDescription[locale]
+              ? postDescription[locale]
+              : (description && description[locale] ? description[locale] : '')
+          }
         </div>
       </section>
       <footer className={css(styles.footer)} >
