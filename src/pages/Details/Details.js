@@ -6,6 +6,7 @@ import { Link } from 'react-router';
 import { loadArticle, clear } from '../../redux/modules/article';
 import LocalMsg from '../../helpers/localization';
 import { open } from '../../redux/modules/modal';
+import Loader from '../../components/Loader';
 
 import styles from './styles';
 
@@ -49,7 +50,7 @@ class Details extends PureComponent {
 
     if (loading || ! article.name) {
       return (
-        <div> <LocalMsg ID="LOADING" /> ... </div>
+        <div> <Loader /> </div>
       );
     }
 
@@ -60,7 +61,8 @@ class Details extends PureComponent {
             className={css(styles.backLink)}
             onClick={this.props.router.goBack}
           >
-            <i className="fa fa-arrow-left" aria-hidden="true"></i>
+            <div className={css(styles.back)} />
+
             { article.name ? article.name[locale] : '' }
           </a>
         </header>
@@ -68,6 +70,7 @@ class Details extends PureComponent {
         <section className={css(styles.content)}>
           <div className={css(styles.images)} >
             <div className={css(styles.mainContainer)} >
+              { !images[image] ? <Loader /> : null }
               <img
                 className={css(styles.mainView)}
                 name="mainView"
@@ -75,12 +78,15 @@ class Details extends PureComponent {
               />
             </div>
             <div className={css(styles.previewContainer)} >
-              <img
-                className={css(styles.previewImage)}
-                name="main"
-                onClick={() => this.setImage('main')}
-                src={images.main ? images.main.preview : ''}
-              />
+              <div className={css(styles.previewWrapper)}>
+                { images.main && !images.main.preview ? <Loader /> : null }
+                <img
+                  className={css(styles.previewImage)}
+                  name="main"
+                  onClick={() => this.setImage('main')}
+                  src={images.main ? images.main.preview : ''}
+                />
+              </div>
               {
                 images.fragment1
                   ? <img

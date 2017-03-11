@@ -6,6 +6,8 @@ import cx from 'classnames';
 
 import { load, getFilters } from '../../redux/modules/gallery';
 import Paginator from '../../components/Paginator/Paginator';
+import Loader from '../../components/Loader';
+
 import LocalMsg from '../../helpers/localization';
 
 import GalleryItem from './components/GalleryItem';
@@ -51,7 +53,7 @@ class Gallery extends PureComponent {
     return `/gallery?page=${page - 1}${filterString}`;
   }
   render() {
-    const { galleryList, page, count, locale, filters } = this.props;
+    const { galleryList, page, count, locale, filters, loading } = this.props;
     const { filter } = this.props.location.query;
 
     return (
@@ -75,6 +77,7 @@ class Gallery extends PureComponent {
           }
         </div>
         <div className={css(styles.itemWrapper)}>
+        { loading ? <Loader /> : null }
         {
           galleryList.map((item) =>
             <GalleryItem
@@ -98,6 +101,7 @@ class Gallery extends PureComponent {
 export default connect(
   ({ gallery, locale }) => ({
     galleryList: gallery.entities,
+    loading: gallery.loading,
     pageSize: gallery.pageCount,
     page: parseInt(gallery.page, 10) + 1,
     count: Math.floor(gallery.count / (gallery.pageCount + 1)) + 1,

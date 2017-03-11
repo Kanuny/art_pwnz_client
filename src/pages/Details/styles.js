@@ -1,5 +1,5 @@
 import { StyleSheet } from 'aphrodite';
-
+import back from './back.svg';
 export default StyleSheet.create({
   container: {
     margin: '55px 0 70px 0',
@@ -23,6 +23,11 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  previewWrapper: {
+    marginBottom: '24px',
+    width: '100px',
+    height: '100px',
+  },
   previewContainer: {
     width: '100px',
     marginLeft: '24px',
@@ -36,7 +41,6 @@ export default StyleSheet.create({
   previewImage: {
     width: '100px',
     height: '100px',
-    marginBottom: '24px',
   },
   backLink: {
     display: 'inline-block',
@@ -62,5 +66,12 @@ export default StyleSheet.create({
   },
   description: {
     width: 'calc(100% - 124px)',
+  },
+  back: {
+    width: '22px',
+    height: '20px',
+    display: 'inline-block',
+    marginRight: '4px',
+    backgroundImage: `url(${back})`,
   },
 });
