@@ -59,7 +59,7 @@ class Details extends PureComponent {
             onClick={this.props.router.goBack}
           >
             <i className="fa fa-arrow-left" aria-hidden="true"></i>
-            <LocalMsg ID="BACK"/>
+            { article.name ? article.name[locale] : '' }
           </a>
         </header>
 
