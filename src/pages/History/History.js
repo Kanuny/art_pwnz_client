@@ -6,6 +6,7 @@ import moment from 'moment';
 
 import { load } from '../../redux/modules/history'
 import LocalMsg from '../../helpers/localization';
+import Loader from '../../components/Loader';
 
 import styles from './styles';
 
@@ -72,12 +73,13 @@ class History extends PureComponent {
   }
 
   render() {
-    const { history, locale } = this.props;
+    const { history, locale, loading } = this.props;
 
     return (
       <section className={css(styles.homeContainer)} >
-        {
-          history.map((item) => <HistoryItem locale={locale} key={item.id + item.type} item={item} />)
+        { loading
+          ? <Loader />
+          : history.map((item) => <HistoryItem locale={locale} key={item.id + item.type} item={item} />)
         }
       </section>
     );
@@ -85,6 +87,10 @@ class History extends PureComponent {
 }
 
 export default connect(
-  ({ history, locale }) => ({ history: history.entities, locale: locale.locale }),
+  ({ history, locale }) => ({
+    history: history.entities,
+    locale: locale.locale,
+    loading: history.loading,
+  }),
   { load },
 )(History);

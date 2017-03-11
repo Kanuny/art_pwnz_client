@@ -77,16 +77,13 @@ class Gallery extends PureComponent {
           }
         </div>
         <div className={css(styles.itemWrapper)}>
-        { loading ? <Loader /> : null }
-        {
-          galleryList.map((item) =>
+        { loading ? <Loader /> : galleryList.map((item) =>
             <GalleryItem
               key={item.id}
               locale={locale}
               article={item}
             />
-          )
-        }
+          ) }
         </div>
         <Paginator
           page={page || 1}

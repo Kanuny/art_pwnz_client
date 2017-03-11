@@ -8,13 +8,15 @@ type VideosType = {
   count: number,
   pageCount: number,
   page: number,
+  loading: boolean,
 };
 
 const initialState = {
   entities: [],
   count: 0,
   pageCount: 0,
-  page: 0
+  page: 0,
+  loading: false,
 };
 
 export default function reducer(state: VideosType = initialState, action: Object = {}) {
@@ -22,13 +24,25 @@ export default function reducer(state: VideosType = initialState, action: Object
     case LOAD_SUCCESS: {
       return {
         ...state,
+        loading: false,
         entities: action.result.videos,
         count: action.result.count,
         pageCount: action.result.pageCount,
         page: action.result.page,
       };
     }
-
+    case LOAD: {
+      return {
+        ...state,
+        loading: true,
+      }
+    }
+    case LOAD_FAIL: {
+      return {
+        ...state,
+        loading: false,
+      }
+    }
     default:
       return state;
   }

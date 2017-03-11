@@ -9,6 +9,7 @@ type HistoryType = {
 
 const initialState = {
   entities: [],
+  loading: false,
 };
 
 export default function reducer(state: HistoryType = initialState, action: Object = {}) {
@@ -16,10 +17,22 @@ export default function reducer(state: HistoryType = initialState, action: Objec
     case LOAD_SUCCESS: {
       return {
         ...state,
+        loading: false,
         entities: action.result.reverse(),
       };
     }
-
+    case LOAD: {
+      return {
+        ...state,
+        loading: true,
+      }
+    }
+    case LOAD_FAILED: {
+      return {
+        ...state,
+        loading: false,
+      }
+    }
     default:
       return state;
   }

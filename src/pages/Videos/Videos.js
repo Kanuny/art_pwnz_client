@@ -6,6 +6,7 @@ import cx from 'classnames';
 
 import { load } from '../../redux/modules/videos';
 import Paginator from '../../components/Paginator/Paginator';
+import Loader from '../../components/Loader';
 
 import styles from './styles';
 
@@ -44,13 +45,14 @@ class Gallery extends PureComponent {
     return `/videos?page=${page}${filterString}`;
   }
   render() {
-    const { videos, page, count, load, locale } = this.props;
+    const { videos, page, count, load, locale, loading } = this.props;
     const { filter } = this.props.location.query;
     return (
       <div className={css(styles.galleryWrapper)} >
         <div className={css(styles.videosWrapper)} >
-        {
-          videos.map((video, index) =>
+        { loading
+          ? <Loader />
+          : videos.map((video, index) =>
             <div className={cx(
                 css(styles.videoItem),
                 index % 2 === 0 ? css(styles.left) : '',
@@ -89,6 +91,7 @@ export default connect(
     page: parseInt(videos.page, 10) + 1,
     count: Math.floor(videos.count / (videos.pageCount + 1)) + 1,
     locale: locale.locale,
+    loading: videos.loading,
   }),
   { load },
 )(Gallery);
