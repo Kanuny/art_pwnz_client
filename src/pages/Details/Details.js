@@ -110,8 +110,13 @@ class Details extends PureComponent {
           </div>
           <div className={css(styles.description)} >
             <div className={css(styles.info)} >
-              <LocalMsg ID={article.forSale ? 'AVAILABLE' : 'UNAVAILABLE'}/>
-
+              {
+                article.forSale
+                  ? <span>
+                    <LocalMsg ID="AVAILABLE" />
+                  </span>
+                  : <span />
+              }
               <span> { article.size ? `${article.size},` : ''}&nbsp;<LocalMsg ID="DESC"/>,&nbsp;{article.year} </span>
             </div>
 

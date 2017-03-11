@@ -2,8 +2,8 @@ import { StyleSheet } from 'aphrodite';
 
 export default StyleSheet.create({
   img: {
-    width: '400px',
-    height: '280px',
+    width: '300px',
+    height: '300px',
   },
   description: {
     margin: '20px 0 15px 0',
