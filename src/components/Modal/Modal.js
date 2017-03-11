@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { css } from 'aphrodite';
 
 import { close, send } from '../../redux/modules/modal';
+import LocalMsg from '../../helpers/localization';
 
 import style from './styles';
 
@@ -39,7 +40,7 @@ function Modal(props) {
   return (
     <div ref={(e) => el = e} onClick={closeModal} className={css(style.wrapper)}>
       <form className={css(style.form)}>
-        <h1 className={css(style.title)}> Send a message </h1>
+        <h1 className={css(style.title)}> <LocalMsg ID="SEND_TITLE"/></h1>
         <input
           className={css(style.input)}
           ref={(e) => data.name = e}
@@ -65,10 +66,10 @@ function Modal(props) {
         />
         <div className={css(style.btnWrapper)}>
           <button className={css(style.send)} onClick={sendMsg}>
-            Send
+            <LocalMsg ID="SEND"/>
           </button>
           <button className={css(style.cancel)} onClick={props.close}>
-            Cancel
+            <LocalMsg ID="CANCEL"/>
           </button>
         </div>
       </form>

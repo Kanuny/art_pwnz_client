@@ -20,6 +20,18 @@ const filters = [
   { name: 'other', query: { genre: false || null } },
 ];
 const localeData = {
+  SEND_TITLE: {
+    en: 'Send a message',
+    ru: 'Отправить сообщение',
+  },
+  SEND: {
+    en: 'Send',
+    ru: 'Отправить',
+  },
+  CANCEL: {
+    en: 'Cancel',
+    ru: 'Отмена',
+  },
   INQUIRY: {
     en: 'Inquiry',
     ru: 'Заказать',
