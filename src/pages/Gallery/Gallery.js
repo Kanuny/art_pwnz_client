@@ -63,7 +63,7 @@ class Gallery extends PureComponent {
                 <Link
                   className={cx(
                     css(styles.filterLink),
-                    f.name === filter ? css(styles.filterActive): ''
+                    f.name === (filter || 'all') ? css(styles.filterActive) : ''
                   )}
                   to={this.getFilter(f.name)}
                 >
