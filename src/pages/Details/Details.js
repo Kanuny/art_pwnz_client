@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 
 import { loadArticle, clear } from '../../redux/modules/article';
 import LocalMsg from '../../helpers/localization';
+import { open } from '../../redux/modules/modal';
 
 import styles from './styles';
 
@@ -13,6 +14,7 @@ type PropType = {
   locale: string,
   router: Object,
   load: Function,
+  open: Function,
 }
 
 class Details extends PureComponent {
@@ -114,6 +116,9 @@ class Details extends PureComponent {
                 article.forSale
                   ? <span>
                     <LocalMsg ID="AVAILABLE" />
+                    <button className={css(styles.inquiry)} onClick={this.props.open}>
+                      <LocalMsg ID="INQUIRY" />
+                    </button>
                   </span>
                   : <span />
               }
@@ -138,5 +143,5 @@ export default connect(
     images: article.images,
     locale: locale.locale,
   }),
-  { loadArticle, clear },
+  { loadArticle, clear, open },
 )(Details);

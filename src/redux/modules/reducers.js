@@ -8,6 +8,7 @@ import article from './article';
 import videos from './videos';
 import history from './history';
 import locale from './locale';
+import modal from './modal';
 
 export default combineReducers({
   routing: routerReducer,
@@ -19,4 +20,5 @@ export default combineReducers({
   videos,
   history,
   locale,
+  modal,
 });

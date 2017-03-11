@@ -29,9 +29,18 @@ const getFilters = (r: RequestFunctionType) =>
   })
 ;
 
+const send = (r: RequestFunctionType) =>
+  (data: Object): Promise<any> => r({
+    method: 'POST',
+    url: '/sendBuyingRequest',
+    data,
+  })
+;
+
 export default {
   load,
   getById,
   getImage,
   getFilters,
+  send,
 };

@@ -8,6 +8,16 @@ export default StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
   },
+  inquiry: {
+    backgroundColor: '#6D8BAD',
+    border: '1px solid #6D8BAD',
+    padding: '2px',
+    width: '130px',
+    marginLeft: '7px',
+    cursor: 'pointer',
+    fontSize: '22px',
+    color: 'white',
+  },
   images: {
     display: 'flex',
     flexDirection: 'row',

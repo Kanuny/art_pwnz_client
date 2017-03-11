@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 
 import { changeLocale } from '../../redux/modules/locale';
 import LocalMsg from '../../helpers/localization';
+import Modal from '../Modal/Modal';
+import { open } from '../../redux/modules/modal';
 
 import styles from './styles';
 
@@ -26,7 +28,7 @@ function Layout(props) {
             <a className={css(styles.socialLink)}>
               <i className="fa fa-facebook" aria-hidden="true"></i>
             </a>
-            <a className={css(styles.socialLink)}>
+            <a className={css(styles.socialLink)} onClick={props.open}>
               <i className="fa fa-envelope-o" aria-hidden="true"></i>
             </a>
           </div>
@@ -94,11 +96,12 @@ function Layout(props) {
       >
         <span className={css(styles.copyright)}> © 2016 Yury Klapouh </span>
       </footer>
+      <Modal />
     </div>
   );
 }
 
 export default connect(
   ({ locale }) => ({ locale: locale.locale }),
-  { changeLocale },
+  { changeLocale, open },
 )(Layout);

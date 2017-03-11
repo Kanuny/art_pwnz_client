@@ -20,6 +20,10 @@ const filters = [
   { name: 'other', query: { genre: false || null } },
 ];
 const localeData = {
+  INQUIRY: {
+    en: 'Inquiry',
+    ru: 'Заказать',
+  },
   all: {
     ru: 'Все',
     en: 'All',
@@ -62,7 +66,7 @@ const localeData = {
   },
   ABOUT: {
     en: 'About',
-    ru: 'Обо Мне',
+    ru: 'Обо мне',
   },
   NAME: {
     en: 'Yury Klapouh',
