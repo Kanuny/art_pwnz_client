@@ -22,10 +22,17 @@ function Layout(props) {
           )}
         >
           <div className={css(styles.socialWrapper)}>
-            <a className={css(styles.socialLink)}>
+            <a
+              className={css(styles.socialLink)}
+              target="_blank"
+              href="https://www.youtube.com/channel/UCU7Q-7n4bcxB6zPOxSFXZUg"
+            >
               <i className="fa fa-youtube" aria-hidden="true"></i>
             </a>
-            <a className={css(styles.socialLink)}>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/profile.php?id=100013131251099"
+              className={css(styles.socialLink)}>
               <i className="fa fa-facebook" aria-hidden="true"></i>
             </a>
             <a className={css(styles.socialLink)} onClick={props.open}>

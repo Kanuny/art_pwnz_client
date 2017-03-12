@@ -79,17 +79,17 @@ class Details extends PureComponent {
               />
             </div>
             <div className={css(styles.previewContainer)} >
-
-              <img
-                className={cx(
-                  css(styles.previewImage),
-                  image !== 'main' ? css(styles.active) : ''
-                )}
-                name="main"
-                onClick={() => this.setImage('main')}
-                src={images.main ? images.main.preview : ''}
-              />
-
+              {
+                images.main ? <img
+                  className={cx(
+                    css(styles.previewImage),
+                    image !== 'main' ? css(styles.active) : ''
+                  )}
+                  name="main"
+                  onClick={() => this.setImage('main')}
+                  src={images.main ? images.main.preview : ''}
+                /> : null
+              }
               {
                 images.fragment1
                   ? <img
