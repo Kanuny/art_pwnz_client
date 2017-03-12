@@ -71,14 +71,15 @@ function HistoryItem(props) {
           ? <footer className={css(styles.footer)} >
             <LocalMsg ID="SHARE_MSG"/>
             <div
-              className="fb-share-button"
+              className={css(styles.share)}
               data-href={shareUrl}
               data-layout="button_count"
               data-size="large"
               data-mobile-iframe="true"
             >
+              <i className="fa fa-facebook" aria-hidden="true"></i>
               <a
-                className="fb-xfbml-parse-ignore"
+                className={css(styles.shareLink)}
                 target="_blank"
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&amp;src=sdkpreparse`}
               >

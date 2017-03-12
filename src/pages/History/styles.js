@@ -11,4 +11,20 @@ export default StyleSheet.create({
   footer: {
     marginBottom: '35px',
   },
+  share: {
+    display: 'inline-block',
+    padding: '5px 7px',
+    backgroundColor: '#4267b2',
+    border: '1px solid #4267b2',
+    borderRadius: '2px',
+    color: 'white',
+  },
+  shareLink: {
+    color: 'white',
+    marginLeft: '4px',
+    textDecoration: 'none',
+    ':visited': {
+      color: 'white',
+    }
+  }
 });
