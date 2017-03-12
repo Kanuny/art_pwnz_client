@@ -20,6 +20,10 @@ const filters = [
   { name: 'other', query: { genre: false || null } },
 ];
 const localeData = {
+  SHARE_BTN_MSG: {
+    en: 'Share',
+    ru: 'Поделится',
+  },
   SEND_TITLE: {
     en: 'Send a message',
     ru: 'Отправить сообщение',

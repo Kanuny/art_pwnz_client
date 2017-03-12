@@ -38,8 +38,9 @@ function VideoItem(props) {
 
 function HistoryItem(props) {
   const { locale } = props;
-  const { postName, name, postDescription, description, type } = props.item;
+  const { postName, name, postDescription, description, type, id } = props.item;
 
+  const shareUrl = `https://artpwnz.herokuapp.com/getSharingHtml/${locale}/${id}/`;
   return (
     <article className={css(styles.article)} >
       <header className={css(styles.header)} >
@@ -65,9 +66,28 @@ function HistoryItem(props) {
           }
         </div>
       </section>
-      <footer className={css(styles.footer)} >
-        <LocalMsg ID="SHARE_MSG"/>
-      </footer>
+      {
+        type !== 'video'
+          ? <footer className={css(styles.footer)} >
+            <LocalMsg ID="SHARE_MSG"/>
+            <div
+              className="fb-share-button"
+              data-href={shareUrl}
+              data-layout="button_count"
+              data-size="large"
+              data-mobile-iframe="true"
+            >
+              <a
+                className="fb-xfbml-parse-ignore"
+                target="_blank"
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&amp;src=sdkpreparse`}
+              >
+                <LocalMsg ID="SHARE_BTN_MSG"/>
+              </a>
+            </div>
+          </footer>
+          : null
+      }
     </article>
   );
 }
