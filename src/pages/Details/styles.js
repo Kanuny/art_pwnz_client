@@ -36,7 +36,7 @@ export default StyleSheet.create({
     width: '100%',
   },
   mainContainer: {
-    width: '100%',
+    margin: 'auto',
   },
   previewImage: {
     width: '100px',
