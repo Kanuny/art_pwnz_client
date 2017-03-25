@@ -80,7 +80,7 @@ class Details extends PureComponent {
             </div>
             <div className={css(styles.previewContainer)} >
               {
-                images.main ? <img
+                images.main && images.main.preview ? <img
                   className={cx(
                     css(styles.previewImage),
                     image !== 'main' ? css(styles.active) : ''
@@ -91,7 +91,7 @@ class Details extends PureComponent {
                 /> : null
               }
               {
-                images.fragment1
+                images.fragment1 && images.fragment1.preview
                   ? <img
                     className={cx(
                       css(styles.previewImage),
@@ -103,7 +103,7 @@ class Details extends PureComponent {
                   /> : null
               }
               {
-                images.fragment2
+                images.fragment2 && images.fragment2.preview
                   ? <img
                     className={cx(
                       css(styles.previewImage),
@@ -115,7 +115,7 @@ class Details extends PureComponent {
                   /> : null
               }
               {
-                images.fragment3
+                images.fragment3 && images.fragment3
                   ? <img
                     className={cx(
                       css(styles.previewImage),
