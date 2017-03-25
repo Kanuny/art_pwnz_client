@@ -115,7 +115,7 @@ class Details extends PureComponent {
                   /> : null
               }
               {
-                images.fragment3 && images.fragment3
+                images.fragment3 && images.fragment3.preview
                   ? <img
                     className={cx(
                       css(styles.previewImage),
