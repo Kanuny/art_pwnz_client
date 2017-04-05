@@ -8,7 +8,7 @@ type LocaleType = {
 };
 
 const initialState = {
-  locale: 'en',
+  locale: 'ru',
 };
 
 export default function reducer(state: LocaleType = initialState, action: Object = {}) {

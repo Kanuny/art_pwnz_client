@@ -24,6 +24,7 @@ export default async function configureStore(history) {
   const filteredLocalStorageEngine = filter(
     createLocalStorageEngine(LOCAL_STORAGE_KEY), [
       ['auth', 'token'],
+      ['locale', 'locale'],
     ],
   );
   console.log(ENV);

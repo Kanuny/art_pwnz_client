@@ -22,7 +22,7 @@ const filters = [
 const localeData = {
   SHARE_BTN_MSG: {
     en: 'Share',
-    ru: 'Поделится',
+    ru: 'Поделиться',
   },
   SEND_TITLE: {
     en: 'Send a message',
@@ -102,11 +102,11 @@ const localeData = {
   },
   ADDED: {
     en: 'added',
-    ru: 'добавленно',
+    ru: 'добавлено',
   },
   SHARE_MSG: {
     en: 'If you like this one, share it with your friends.',
-    ru: 'Пондравилось? Поделись с друзьями.',
+    ru: 'Понравилось? Поделись с друзьями.',
   },
   NEXT: {
     en: 'next',
