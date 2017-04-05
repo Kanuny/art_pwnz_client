@@ -24,19 +24,22 @@ export default StyleSheet.create({
     width: '500px',
     margin: '20px 50px',
     padding: '4px',
+    fontSize: '18px',
   },
   btnWrapper: {
     display: 'flex',
     flexDirection: 'row-reverse',
     margin: '0 38px 50px 0',
+    fontSize: '18px',
   },
   cancel: {
     border: '1px solid #979797',
     color: 'white',
     backgroundColor: '#df8d8d',
     padding: '8px',
-    width: '100px',
+    width: '120px',
     marginLeft: '10px',
+    fontSize: '18px',
   },
   title: {
     display: 'block',
@@ -47,9 +50,10 @@ export default StyleSheet.create({
   send: {
     border: '1px solid #979797',
     color: 'white',
+    fontSize: '18px',
     backgroundColor: '#6d8bad',
     padding: '8px',
-    width: '100px',
+    width: '120px',
     marginLeft: '10px',
   },
 });
