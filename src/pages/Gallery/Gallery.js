@@ -101,7 +101,7 @@ export default connect(
     loading: gallery.loading,
     pageSize: gallery.pageCount,
     page: parseInt(gallery.page, 10) + 1,
-    count: Math.floor(gallery.count / (gallery.pageCount + 1)) + 1,
+    count: Math.floor((gallery.count / gallery.pageCount) + 0.5) + 1,
     locale: locale.locale,
     filters: gallery.filters,
   }),
