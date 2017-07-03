@@ -17,8 +17,7 @@ function Stub() {
 export default (browserHistory) => (
   <Router history={browserHistory} render={(props) => <ReduxAsyncConnect {...props} />}>
     <Route path="/" component={Layout}>
-      <IndexRedirect to="home" />
-      <Route path="home" component={Home} />
+      <IndexRedirect to="gallery" />
       <Route path="/gallery">
         <IndexRoute component={Gallery} />
 
@@ -26,7 +25,6 @@ export default (browserHistory) => (
       </Route>
       <Route path="gallery" component={Gallery} />
       <Route path="videos" component={Videos} />
-      <Route path="about" component={Stub} />
     </Route>
     <Route path="*" component={() => <div> Not Found </div>} />
   </Router>
