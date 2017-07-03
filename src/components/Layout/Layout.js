@@ -62,13 +62,6 @@ function Layout(props) {
             <Link
               activeClassName={css(styles.active)}
               className={css(styles.link)}
-              to="/home"
-            >
-              <LocalMsg ID="HOME" />
-            </Link>
-            <Link
-              activeClassName={css(styles.active)}
-              className={css(styles.link)}
               to="/gallery"
             >
               <LocalMsg ID="GALLERY" />
@@ -79,13 +72,6 @@ function Layout(props) {
               to="/videos"
             >
               <LocalMsg ID="VIDEOS" />
-            </Link>
-            <Link
-              activeClassName={css(styles.active)}
-              className={css(styles.link)}
-              to="/about"
-            >
-              <LocalMsg ID="ABOUT" />
             </Link>
           </nav>
         </div>
